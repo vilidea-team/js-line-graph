@@ -1,0 +1,71 @@
+/* General styling */
+:root {
+  --font-small: 11pt;
+  --light-bg-color: #444;
+  --primary-color: #0858bf;
+  --graph-height: 350px;
+}
+
+body {
+  background: #040404;
+  font-family: sans-serif;
+}
+
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; 
+}
+
+
+
+/* Important Styling */
+
+.graph{
+  height:100%;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  overflow: visible;
+}
+
+
+.graph_container{
+	display: flex;
+	justify-content: space-between;
+	height: var(--graph-height);
+	position: relative;
+	margin: 60px 0 30px 0;
+	z-index: 1;
+}
+
+.y-axis {
+    height: var(--graph-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--light-bg-color);
+    text-align: right;
+    padding-right: 10px;
+    font-size: var(--font-small);
+    border-right: 1px solid var(--light-bg-color);
+    
+    /* 10% of the height at the bottom is padded */
+ 		padding-bottom: calc((var(--graph-height) * .1) - 15px);
+}
+
+.y-axis.time-axis{ width: 100px; }
+.graph .bottom{ fill:var(--light-bg-color); }
+
+.graph .line{
+  stroke:var(--primary-color);
+  stroke-width: 2;
+  fill: transparent;
+}
+
+.graph .circle{
+  stroke: var(--primary-color);
+  stroke-linecap:round;
+  stroke-width:13px;
+}
